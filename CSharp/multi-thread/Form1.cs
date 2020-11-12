@@ -26,8 +26,10 @@ namespace multi_thread
                 flag = true;
                 button1.Text = "停止";
                 Thread thread = new Thread(RandNumber);
+                //设置为后台线程
                 thread.IsBackground = true;
                 thread.Start();
+                //传参数给线程
                 //thread.Start(parameter);
             }
             else
@@ -36,8 +38,14 @@ namespace multi_thread
                 button1.Text = "停止";
             }
         }
+        /// <summary>
+        /// 
+        /// <paramref name="flag"/>
+        /// </summary>
+        //private void RandNumber(object flag)
         private void RandNumber()
         {
+            //var b = (bool)flag;
             Random random = new Random();
             while (flag)
             {
