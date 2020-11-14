@@ -56,6 +56,7 @@ namespace Multi_Client
             this.txt_IPAddress.Name = "txt_IPAddress";
             this.txt_IPAddress.Size = new System.Drawing.Size(100, 23);
             this.txt_IPAddress.TabIndex = 1;
+            this.txt_IPAddress.Text = "192.168.1.4";
             // 
             // txt_port
             // 
@@ -63,6 +64,7 @@ namespace Multi_Client
             this.txt_port.Name = "txt_port";
             this.txt_port.Size = new System.Drawing.Size(52, 23);
             this.txt_port.TabIndex = 2;
+            this.txt_port.Text = "50000";
             // 
             // label1
             // 
@@ -134,7 +136,8 @@ namespace Multi_Client
             this.Controls.Add(this.txt_IPAddress);
             this.Controls.Add(this.btn_connect);
             this.Name = "Form_Client";
-            this.Text = "Form1";
+            this.Text = "客户端";
+            this.Load += new System.EventHandler(this.Form_Client_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

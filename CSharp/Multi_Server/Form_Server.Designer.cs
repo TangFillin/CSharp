@@ -63,6 +63,7 @@ namespace Multi_Server
             this.txt_port.Name = "txt_port";
             this.txt_port.Size = new System.Drawing.Size(53, 23);
             this.txt_port.TabIndex = 2;
+            this.txt_port.Text = "50000";
             // 
             // label1
             // 
@@ -117,6 +118,7 @@ namespace Multi_Server
             this.btn_sendMessage.TabIndex = 9;
             this.btn_sendMessage.Text = "发送消息";
             this.btn_sendMessage.UseVisualStyleBackColor = true;
+            this.btn_sendMessage.Click += new System.EventHandler(this.btn_sendMessage_Click);
             // 
             // Form_Server
             // 

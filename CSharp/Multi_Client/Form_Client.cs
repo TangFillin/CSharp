@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,6 +30,10 @@ namespace Multi_Client
             IPEndPoint point = new IPEndPoint(ipaddress, Convert.ToInt32(port));
             socket.Connect(point);
             ShowMessage("连接成功");
+
+            Thread thread = new Thread(Recive);
+            thread.IsBackground = true;
+            thread.Start();
         }
 
         void ShowMessage(string message)
@@ -43,6 +48,26 @@ namespace Multi_Client
             socket.Send(buffer);
             ShowMessage("我：" + message);
             txt_send.Clear();
+        }
+
+        void Recive()
+        {
+            while (true)
+            {
+                byte[] buffer = new byte[1024 * 1024 * 2];
+                int r = socket.Receive(buffer);
+                if (r == 0)
+                {
+                    break;
+                }
+                string message = Encoding.UTF8.GetString(buffer, 0, r);
+                ShowMessage(message);
+            }
+        }
+
+        private void Form_Client_Load(object sender, EventArgs e)
+        {
+            CheckForIllegalCrossThreadCalls = false;
         }
     }
 }

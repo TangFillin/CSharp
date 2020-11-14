@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Multi_Server
@@ -41,8 +36,9 @@ namespace Multi_Server
             {
                 btn_listen.Text = "开始监听";
             }
-            
+
         }
+        List<Socket> Sockets = new List<Socket>();
         /// <summary>
         /// 等待客户端连接，并创建与之通信的Socket
         /// </summary>
@@ -54,6 +50,7 @@ namespace Multi_Server
             {
                 Socket socketSend = socket.Accept();
                 ShowMessage(socketSend.RemoteEndPoint.ToString() + "上线了！");
+                Sockets.Add(socketSend);
                 //开启线程接收客户端消息
                 Thread thread = new Thread(RecieveMessage);
                 thread.IsBackground = true;
@@ -76,12 +73,21 @@ namespace Multi_Server
                     }
                     string str = Encoding.UTF8.GetString(buffer, 0, r);
                     ShowMessage(socket.RemoteEndPoint + ":" + str);
+                    foreach (var s in Sockets)
+                    {
+                        if (!s.RemoteEndPoint.Equals(socket.RemoteEndPoint))
+                        {
+                            str = socket.RemoteEndPoint + ":" + str;
+                            
+                            s.Send(Encoding.UTF8.GetBytes(str));
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
                     ShowMessage(ex.Message);
                 }
-                
+
             }
         }
         /// <summary>
@@ -95,7 +101,18 @@ namespace Multi_Server
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Control.CheckForIllegalCrossThreadCalls = false;
+            CheckForIllegalCrossThreadCalls = false;
+        }
+
+        private void btn_sendMessage_Click(object sender, EventArgs e)
+        {
+            string message = txt_sendMessage.Text.Trim();
+            byte[] buffer = Encoding.UTF8.GetBytes("192.168.1.4:50000" + message);
+            foreach (var socket in Sockets)
+            {
+                socket.Send(buffer);
+            }
+            txt_sendMessage.Clear();
         }
     }
 }
