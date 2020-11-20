@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "multi-thread", "multi-threa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChatRoom", "ChatRoom", "{B3638F6F-923D-4646-BACD-C30762511668}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multi_Server", "Multi_Server\Multi_Server.csproj", "{663DB13E-4BC4-4B86-923F-F8017EED73C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multi_Server", "Multi_Server\Multi_Server.csproj", "{663DB13E-4BC4-4B86-923F-F8017EED73C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multi_Client", "Multi_Client\Multi_Client.csproj", "{DDA9F890-2359-4A41-BCE2-673E5237A6D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multi_Client", "Multi_Client\Multi_Client.csproj", "{DDA9F890-2359-4A41-BCE2-673E5237A6D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonPattern", "SingletonPattern\SingletonPattern.csproj", "{3F936AAD-29B2-42D2-8B9F-97EC0E45B699}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{DDA9F890-2359-4A41-BCE2-673E5237A6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDA9F890-2359-4A41-BCE2-673E5237A6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDA9F890-2359-4A41-BCE2-673E5237A6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F936AAD-29B2-42D2-8B9F-97EC0E45B699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F936AAD-29B2-42D2-8B9F-97EC0E45B699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F936AAD-29B2-42D2-8B9F-97EC0E45B699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F936AAD-29B2-42D2-8B9F-97EC0E45B699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
