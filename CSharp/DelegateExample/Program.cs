@@ -9,6 +9,8 @@ namespace DelegateExample
         public delegate string Convert(string str);
 
         public delegate bool Compare<T>(T a, T b);
+
+        public delegate void ShowMessage();
         static void Main(string[] args)
         {
             //委托
@@ -31,6 +33,12 @@ namespace DelegateExample
             var result = GetMax(objs, (int a, int b) => { return a < b; });
             var result1 = GetMax(strs, (string a, string b) => { return a.CompareTo(b)<0; });
             Console.WriteLine("Max:" + result1);
+
+            //多播委托
+            ShowMessage show = () => { Console.WriteLine("Hello"); };
+            show += () => { Console.WriteLine("Hi"); };
+
+            show();
 
         }
 
