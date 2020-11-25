@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPattern", "Observer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateExample", "DelegateExample\DelegateExample.csproj", "{EA3951BE-A79A-4423-A11E-12F4C868F65C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormTransferValue", "FormTransferValue\FormTransferValue.csproj", "{F96D680A-C46C-4A91-9403-D64029B1E9B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{EA3951BE-A79A-4423-A11E-12F4C868F65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA3951BE-A79A-4423-A11E-12F4C868F65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA3951BE-A79A-4423-A11E-12F4C868F65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F96D680A-C46C-4A91-9403-D64029B1E9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F96D680A-C46C-4A91-9403-D64029B1E9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F96D680A-C46C-4A91-9403-D64029B1E9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F96D680A-C46C-4A91-9403-D64029B1E9B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
