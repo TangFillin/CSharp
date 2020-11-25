@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XmlOperator", "XmlOperator\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{FE2B115B-8AD5-49DF-B840-54FFC3A55DFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateExample", "DelegateExample\DelegateExample.csproj", "{EA3951BE-A79A-4423-A11E-12F4C868F65C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{FE2B115B-8AD5-49DF-B840-54FFC3A55DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE2B115B-8AD5-49DF-B840-54FFC3A55DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE2B115B-8AD5-49DF-B840-54FFC3A55DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3951BE-A79A-4423-A11E-12F4C868F65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3951BE-A79A-4423-A11E-12F4C868F65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3951BE-A79A-4423-A11E-12F4C868F65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3951BE-A79A-4423-A11E-12F4C868F65C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
