@@ -56,7 +56,7 @@ namespace JWTTest.Controllers
             
             //生成token
             var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
-
+            
             return new string[] { jwtToken };
         }
         [HttpGet("{jwtstr}")]
