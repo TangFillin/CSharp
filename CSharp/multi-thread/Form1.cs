@@ -14,10 +14,23 @@ namespace multi_thread
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(string[] args)
         {
             InitializeComponent();
+            
+            StringBuilder stringBuilder = new StringBuilder();
+            if(args.Length==0)
+            {
+                MessageBox.Show("未找到参数");
+            }
+            args.ToList().ForEach(item =>
+            {
+                stringBuilder.AppendLine(item);
+                MessageBox.Show(item);
+            });
+            textBox1.Text = stringBuilder.ToString();
         }
+        
         private bool flag = false;
         private void button1_Click(object sender, EventArgs e)
         {
