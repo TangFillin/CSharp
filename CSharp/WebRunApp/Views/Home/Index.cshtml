@@ -4,16 +4,36 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-
+    <input type="text" class="form-control col-4" id="count" /> 
     <p><a href="#" onclick="RunExe()">SQLite</a></p>
     <a href="YourApplication:12333">SQLite</a>
     <script>
 
         function RunExe() {
-            var url = "ArchivePrint://12333 fsffnowbe theoisbg;;;;;hisofnoisnbfsbgisngbbjsbgu ifsnuibfgsguiginjsfd\nsofosebfibesofn\onobsjoinfoisbeobseguobeu bgnkngjkfbsjkgbsjlbbgklbgskldbn";
+            var count = $("#count").val();
+            AjaxMethod("/home/getdata", "json", "get", { count }, function (result) {
+                var url = "ArchivePrint://" + result;
 
-           // window.open(url);
-            window.location.href = url;
+                // window.open(url);
+                window.location.href = url;
+            });
+            
+        }
+        //封装ajax
+        function AjaxMethod(url, dataType, type, params, callback, async = true) {
+            $.ajax(url, {
+                dataType: dataType,
+                cache: false,
+                type: type,
+                async: async,
+                data: params,
+                success: function (result) {
+                        callback(result);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
         }
     </script>
 </div>

@@ -36,17 +36,16 @@ namespace WebRunApp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         [HttpGet]
-        public IActionResult GetData()
+        public async Task<IActionResult> GetData(int count=10000)
         {
-            StringBuilder builder = new StringBuilder();
-            using(Stream stream = new FileStream("", FileMode.Open))
+            string str = "";
+            Random random = new Random();
+            for (int i = 0; i < count; i++)
             {
-                using(StreamReader reader = new StreamReader(@"C:\Users\fillin\Desktop\圣墟.txt"))
-                {
-                    builder.AppendLine(reader.ReadLine());
-                }
+                str += (char)random.Next(48, 128);
             }
-            return Json(new { txt = builder });
+
+            return Json(str);
         }
     }
 }

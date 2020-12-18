@@ -19,7 +19,7 @@ namespace ReportViewerPrint
             InitializeComponent();
             string path = Path.Combine(Application.StartupPath, Application.ProductName + ".exe");
             //注册表操作
-            var archivePrint = Registry.CurrentUser.CreateSubKey("ArchivePrint");
+            var archivePrint = Registry.ClassesRoot.CreateSubKey("ArchivePrint");
 
             if (archivePrint.SubKeyCount == 0 || !archivePrint.GetValue("URL Protocol").Equals(path))
             {
