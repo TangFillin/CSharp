@@ -59,7 +59,7 @@ namespace IDS4_Test
                      {
                          // ValidateIssuerSigningKey = true,
                          ValidateAudience = false,
-                         ValidateIssuerSigningKey=false
+                         //ValidateIssuerSigningKey=false
                          //IssuerSigningKey = new X509SecurityKey(new System.Security.Cryptography.X509Certificates.X509Certificate2())
                      };
                      IdentityModelEventSource.ShowPII = true;
@@ -139,16 +139,7 @@ namespace IDS4_Test
             c.AddSecurityDefinition("bearerAuth", securityScheme);
             c.AddSecurityRequirement(securityRequirement);
         });
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy(name: MyAllowSpecificOrigins,
-            //                      builder =>
-            //                      {
-            //                          builder.WithOrigins("http://example.com",
-            //                                              "http://www.contoso.com")
-            //                          .AllowAnyOrigin();
-            //                      });
-            //});
+            
         }
         
 

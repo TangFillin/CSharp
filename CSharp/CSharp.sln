@@ -27,7 +27,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportViewerSample", "Repor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IDS4_Test", "IDS4_Test\IDS4_Test.csproj", "{E23D30C6-AA2A-4EBE-9FB3-C7F402125084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRunApp", "WebRunApp\WebRunApp.csproj", "{8B86EFE2-F21F-4D35-8B54-8EB737B8EFF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRunApp", "WebRunApp\WebRunApp.csproj", "{8B86EFE2-F21F-4D35-8B54-8EB737B8EFF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportViewerPrint", "ReportViewerPrint\ReportViewerPrint.csproj", "{8083B86D-BEDF-4979-9DFA-3EC378A9919F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,10 @@ Global
 		{8B86EFE2-F21F-4D35-8B54-8EB737B8EFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B86EFE2-F21F-4D35-8B54-8EB737B8EFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B86EFE2-F21F-4D35-8B54-8EB737B8EFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8083B86D-BEDF-4979-9DFA-3EC378A9919F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8083B86D-BEDF-4979-9DFA-3EC378A9919F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8083B86D-BEDF-4979-9DFA-3EC378A9919F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8083B86D-BEDF-4979-9DFA-3EC378A9919F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

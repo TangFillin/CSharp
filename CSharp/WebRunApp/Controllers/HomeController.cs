@@ -3,7 +3,9 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using WebRunApp.Models;
 
@@ -32,6 +34,19 @@ namespace WebRunApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        [HttpGet]
+        public IActionResult GetData()
+        {
+            StringBuilder builder = new StringBuilder();
+            using(Stream stream = new FileStream("", FileMode.Open))
+            {
+                using(StreamReader reader = new StreamReader(@"C:\Users\fillin\Desktop\圣墟.txt"))
+                {
+                    builder.AppendLine(reader.ReadLine());
+                }
+            }
+            return Json(new { txt = builder });
         }
     }
 }
