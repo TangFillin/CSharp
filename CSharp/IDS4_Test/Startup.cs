@@ -1,4 +1,4 @@
-using IdentityServer4.Services;
+ï»¿using IdentityServer4.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -45,6 +45,7 @@ namespace IDS4_Test
             //var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             services.AddIdentityServer()
                 //.AddSigningCredential(credential)
+                //.AddDeveloperSigningCredential(false)//ç”Ÿäº§ç¯å¢ƒ
                 .AddDeveloperSigningCredential()
                 .AddInMemoryApiScopes(Config.GetApiScopes())
                 .AddInMemoryClients(Config.GetClients());
@@ -52,7 +53,8 @@ namespace IDS4_Test
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
                  {
-                     options.Authority = "http://localhost:5000/";
+                     options.Authority = "http://localhost:5000/";//å¼€å‘ç¯å¢ƒ:æŒ‡å®šä¸ºå‘å¸ƒåçš„è®¿é—®åœ°å€
+                     //options.Authority = "http://192.168.1.4:8080/";//ç”Ÿäº§ç¯å¢ƒ:æŒ‡å®šä¸ºå‘å¸ƒåçš„è®¿é—®åœ°å€
                      options.RequireHttpsMetadata = false;
                      
                      options.TokenValidationParameters = new TokenValidationParameters
@@ -62,12 +64,11 @@ namespace IDS4_Test
                          //ValidateIssuerSigningKey=false
                          //IssuerSigningKey = new X509SecurityKey(new System.Security.Cryptography.X509Certificates.X509Certificate2())
                      };
-                     IdentityModelEventSource.ShowPII = true;
-                     options.MetadataAddress = "http://localhost:5000/.well-known/openid-configuration";//
-                     options.Configuration = new Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfiguration();
-                     //options.Audience = Config.ImageMan;
-                     //options.MetadataAddress = "";
-                 }).AddCookie();
+                     //IdentityModelEventSource.ShowPII = true;
+                     //options.MetadataAddress = "http://localhost:8080/.well-known/openid-configuration";//
+                     //options.Configuration = new Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfiguration();
+                     options.Audience = Config.ImageMan;
+                 });
           
             //services.AddAuthorization(options =>
             //{
@@ -107,20 +108,20 @@ namespace IDS4_Test
                     Url = new Uri("https://example.com/license"),
                 }
             });
-            //Bearer µÄscheme¶¨Òå
+            //Bearer çš„schemeå®šä¹‰
             var securityScheme = new OpenApiSecurityScheme()
             {
                 Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
                 Name = "Authorization",
-                //²ÎÊıÌí¼ÓÔÚÍ·²¿
+                //å‚æ•°æ·»åŠ åœ¨å¤´éƒ¨
                 In = ParameterLocation.Header,
-                //Ê¹ÓÃAuthorizeÍ·²¿
+                //ä½¿ç”¨Authorizeå¤´éƒ¨
                 Type = SecuritySchemeType.Http,
-                //ÄÚÈİÎªÒÔ bearer¿ªÍ·
+                //å†…å®¹ä¸ºä»¥ bearerå¼€å¤´
                 Scheme = "bearer",
                 BearerFormat = "JWT"
             };
-            //°ÑËùÓĞ·½·¨ÅäÖÃÎªÔö¼ÓbearerÍ·²¿ĞÅÏ¢
+            //æŠŠæ‰€æœ‰æ–¹æ³•é…ç½®ä¸ºå¢åŠ bearerå¤´éƒ¨ä¿¡æ¯
             var securityRequirement = new OpenApiSecurityRequirement
                 {
                         {
@@ -135,7 +136,7 @@ namespace IDS4_Test
                                 new string[] {}
                         }
                 };
-            //×¢²áµ½swaggerÖĞ
+            //æ³¨å†Œåˆ°swaggerä¸­
             c.AddSecurityDefinition("bearerAuth", securityScheme);
             c.AddSecurityRequirement(securityRequirement);
         });
