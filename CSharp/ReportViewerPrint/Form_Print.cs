@@ -92,5 +92,9 @@ namespace ReportViewerPrint
         {
             Print();
         }
+
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+           
     }
 }

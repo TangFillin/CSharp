@@ -30,14 +30,19 @@ namespace ReportViewerPrint
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.UserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.UserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Btn_Print = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UserBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // UserBindingSource
+            // 
+            this.UserBindingSource.DataSource = typeof(ReportViewerPrint.Model.User);
             // 
             // textBox1
             // 
@@ -66,9 +71,9 @@ namespace ReportViewerPrint
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.UserBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.UserBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ReportViewerPrint.PrintModel.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(231, 72);
             this.reportViewer1.Name = "reportViewer1";
@@ -77,15 +82,22 @@ namespace ReportViewerPrint
             this.reportViewer1.TabIndex = 3;
             this.reportViewer1.Print += new Microsoft.Reporting.WinForms.ReportPrintEventHandler(this.reportViewer1_Print);
             // 
-            // UserBindingSource
+            // Btn_Print
             // 
-            this.UserBindingSource.DataSource = typeof(ReportViewerPrint.Model.User);
+            this.Btn_Print.Location = new System.Drawing.Point(476, 31);
+            this.Btn_Print.Name = "Btn_Print";
+            this.Btn_Print.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Print.TabIndex = 4;
+            this.Btn_Print.Text = "打印";
+            this.Btn_Print.UseVisualStyleBackColor = true;
+            this.Btn_Print.Click += new System.EventHandler(this.Btn_Print_Click);
             // 
             // Form_Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Btn_Print);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -106,6 +118,7 @@ namespace ReportViewerPrint
         private System.Windows.Forms.Label label1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource UserBindingSource;
+        private System.Windows.Forms.Button Btn_Print;
     }
 }
 
