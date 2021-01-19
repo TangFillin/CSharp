@@ -1,0 +1,35 @@
+﻿Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\YourApplication]
+"URL Protocol"="D:\\mutiple-thread\\multi-thread.exe"
+@="multi-thread"
+[HKEY_CLASSES_ROOT\YourApplication\DefaultIcon]
+@="D:\\mutiple-thread\\multi-thread.exe,1"
+[HKEY_CLASSES_ROOT\YourApplication\shell]
+[HKEY_CLASSES_ROOT\YourApplication\shell\open]
+[HKEY_CLASSES_ROOT\YourApplication\shell\open\command]
+@="\"D:\\mutiple-thread\\multi-thread.exe\" \"%1\""
+
+
+#####################################################################################
+##D:\\mutiple-thread\\multi-thread.exe
+##Windows Registry Editor Version 5.00
+
+##[HKEY_CLASSES_ROOT\SQLite]
+
+##"URL Protocol"="D:\\SQLiteStudio-3.2.1\\SQLiteStudio.exe"
+
+##@="SimuProtocol"
+
+##[HKEY_CLASSES_ROOT\Simu\DefaultIcon]
+
+##@="D:\\SQLiteStudio-3.2.1\\SQLiteStudio.exe,1"
+
+##[HKEY_CLASSES_ROOT\Simu\shell]
+
+##[HKEY_CLASSES_ROOT\Simu\shell\open]
+
+##[HKEY_CLASSES_ROOT\Simu\shell\open\command]
+
+##@="\"D:\\SQLiteStudio-3.2.1\\SQLiteStudio.exe\" \"%1\""
+
+#####################################################################################

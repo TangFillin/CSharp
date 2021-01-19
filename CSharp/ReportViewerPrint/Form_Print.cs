@@ -73,9 +73,9 @@ namespace ReportViewerPrint
 
         public void Print()
         {
-            
 
-            
+
+
 
         }
 
@@ -95,6 +95,6 @@ namespace ReportViewerPrint
 
         private void Btn_Print_Click(object sender, EventArgs e)
         {
-           
+        }
     }
 }
