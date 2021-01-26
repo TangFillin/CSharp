@@ -54,7 +54,7 @@ namespace FlashTrackBar
                 if (showGradient)
                 {
                     baseBackground = new LinearGradientBrush(new Point(0, 0),
-                                                             new Point(ClientSize.Width, 0),
+                                                             new Point(ClientSize.Width, ClientSize.Height),
                                                              StartColor,
                                                              EndColor);
                 }
@@ -117,6 +117,7 @@ namespace FlashTrackBar
 
         [Category("Flash")]
         [DefaultValue(true)]
+        [Description("允许编辑")]
         public bool AllowUserEdit
         {
             get
@@ -138,7 +139,8 @@ namespace FlashTrackBar
         }
 
         [
-            Category("Flash")
+            Category("Flash"),
+            Description("结束颜色，渐变色的尾端颜色")
         ]
         public Color EndColor
         {

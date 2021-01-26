@@ -35,6 +35,7 @@ namespace FlashTrackBar
             // flashTrackerBar1
             // 
             this.flashTrackerBar1.BackColor = System.Drawing.Color.Black;
+            this.flashTrackerBar1.DarkenBy = ((byte)(185));
             this.flashTrackerBar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flashTrackerBar1.ForeColor = System.Drawing.Color.White;
             this.flashTrackerBar1.Location = new System.Drawing.Point(0, 0);
@@ -42,7 +43,7 @@ namespace FlashTrackBar
             this.flashTrackerBar1.Size = new System.Drawing.Size(600, 450);
             this.flashTrackerBar1.TabIndex = 0;
             this.flashTrackerBar1.Text = "Drag the Mouse and say Wow!";
-            this.flashTrackerBar1.Value = 73;
+            this.flashTrackerBar1.Value = 100;
             // 
             // Form1
             // 
