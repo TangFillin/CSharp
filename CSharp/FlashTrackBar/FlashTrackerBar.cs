@@ -115,18 +115,6 @@ namespace FlashTrackBar
             }
         }
 
-        protected override void Dispose(bool dispoing)
-        {
-            if (dispoing)
-            {
-                if (components != null)
-                {
-                    components.Dispose();
-                }
-            }
-            base.Dispose(dispoing);
-        }
-
         [Category("Flash")]
         [DefaultValue(true)]
         public bool AllowUserEdit
@@ -470,6 +458,101 @@ namespace FlashTrackBar
             dragging = false;
             value = dragValue;
             OnValueChanged(EventArgs.Empty);
+        }
+        protected override void OnTextChanged(EventArgs e)
+        {
+            base.OnTextChanged(e);
+            Invalidate();
+        }
+
+        protected override void OnBackColorChanged(EventArgs e)
+        {
+            base.OnBackColorChanged(e);
+            if ((baseBackground != null) && (!showGradient))
+            {
+                baseBackground.Dispose();
+                baseBackground = null;
+            }
+        }
+
+        protected override void OnBackgroundImageChanged(EventArgs e)
+        {
+            base.OnTextChanged(e);
+            if ((baseBackground != null) && (!showGradient))
+            {
+                baseBackground.Dispose();
+                baseBackground = null;
+            }
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            if (baseBackground != null)
+            {
+                baseBackground.Dispose();
+                baseBackground = null;
+            }
+        }
+
+        protected virtual void OnValueChanged(EventArgs e)
+        {
+            if (onValueChanged != null)
+            {
+                onValueChanged.Invoke(this, e);
+            }
+        }
+        private void SetDragValue(Point mouseLocation)
+        {
+
+            Rectangle client = ClientRectangle;
+
+            if (client.Contains(mouseLocation))
+            {
+                float percentage = (float)mouseLocation.X / (float)ClientRectangle.Width;
+                int newDragValue = (int)(percentage * (float)(max - min));
+                if (newDragValue != dragValue)
+                {
+                    int old = dragValue;
+                    dragValue = newDragValue;
+                    OptimizedInvalidate(old, dragValue);
+                }
+            }
+            else
+            {
+                if (client.Y <= mouseLocation.Y && mouseLocation.Y <= client.Y + client.Height)
+                {
+                    if (mouseLocation.X <= client.X && mouseLocation.X > client.X - LeftRightBorder)
+                    {
+                        int newDragValue = min;
+                        if (newDragValue != dragValue)
+                        {
+                            int old = dragValue;
+                            dragValue = newDragValue;
+                            OptimizedInvalidate(old, dragValue);
+                        }
+                    }
+                    else if (mouseLocation.X >= client.X + client.Width && mouseLocation.X < client.X + client.Width + LeftRightBorder)
+                    {
+                        int newDragValue = max;
+                        if (newDragValue != dragValue)
+                        {
+                            int old = dragValue;
+                            dragValue = newDragValue;
+                            OptimizedInvalidate(old, dragValue);
+                        }
+                    }
+                }
+                else
+                {
+                    if (dragValue != value)
+                    {
+                        int old = dragValue;
+                        dragValue = value;
+                        OptimizedInvalidate(old, dragValue);
+                    }
+                }
+            }
         }
     }
 }
