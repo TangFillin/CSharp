@@ -29,20 +29,36 @@ namespace FlashTrackBar
         /// </summary>
         private void InitializeComponent()
         {
+            this.flashTrackerBar1 = new FlashTrackBar.FlashTrackerBar();
             this.SuspendLayout();
+            // 
+            // flashTrackerBar1
+            // 
+            this.flashTrackerBar1.BackColor = System.Drawing.Color.Black;
+            this.flashTrackerBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flashTrackerBar1.ForeColor = System.Drawing.Color.White;
+            this.flashTrackerBar1.Location = new System.Drawing.Point(0, 0);
+            this.flashTrackerBar1.Name = "flashTrackerBar1";
+            this.flashTrackerBar1.Size = new System.Drawing.Size(600, 450);
+            this.flashTrackerBar1.TabIndex = 0;
+            this.flashTrackerBar1.Text = "Drag the Mouse and say Wow!";
+            this.flashTrackerBar1.Value = 73;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(120, 0);
+            this.ClientSize = new System.Drawing.Size(600, 450);
+            this.Controls.Add(this.flashTrackerBar1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Control Example";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private FlashTrackerBar flashTrackerBar1;
     }
 }
 
