@@ -35,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_SignalR", "Test_Signal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashTrackBar", "FlashTrackBar\FlashTrackBar.csproj", "{F0420302-B808-41B6-8B3B-700AD5489502}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptAndDecrypt", "EncryptAndDecrypt\EncryptAndDecrypt.csproj", "{B9501F7E-E224-4760-9621-62D1C67D798B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{F0420302-B808-41B6-8B3B-700AD5489502}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0420302-B808-41B6-8B3B-700AD5489502}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0420302-B808-41B6-8B3B-700AD5489502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9501F7E-E224-4760-9621-62D1C67D798B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9501F7E-E224-4760-9621-62D1C67D798B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9501F7E-E224-4760-9621-62D1C67D798B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9501F7E-E224-4760-9621-62D1C67D798B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
