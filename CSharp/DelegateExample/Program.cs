@@ -40,6 +40,20 @@ namespace DelegateExample
 
             show();
 
+
+
+            //无返回值委托,最多16个参数
+            Action action0 = () => Console.WriteLine("1231");
+            Action<int,string> action1=(age,name)=>Console.WriteLine($"{age},{name}");
+            action1.Invoke(20, "fillin");
+
+            //有返回值 0-16个参数 泛型委托
+            Func<int> func0 = () => DateTime.Now.Year;
+            var year = func0.Invoke();
+            Func<int, int, int> func1 = (a, b) => a + b;
+            var sum = func1.Invoke(1, 1);
+
+
         }
 
         public static T GetMax<T>(T[] objs, Compare<T> compare)
