@@ -48,7 +48,7 @@ namespace MyCustomControls
             this.comboxMulti1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboxMulti1.Location = new System.Drawing.Point(0, 0);
             this.comboxMulti1.Name = "comboxMulti1";
-            this.comboxMulti1.Size = new System.Drawing.Size(800, 20);
+            this.comboxMulti1.Size = new System.Drawing.Size(800, 450);
             this.comboxMulti1.TabIndex = 2;
             this.comboxMulti1.ItemClick += new MyCustomControls.ComboxMulti.ComboxMulti.CheckBoxListItemClick(this.comCheckBoxList1_ItemClick);
             // 
